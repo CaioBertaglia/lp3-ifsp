@@ -2,25 +2,17 @@
 
 import random
 
-def gera():
-    return random.randint(1,100)
+numero = random.randint(1,100)
 
-def game():
-    resposta = gera()
-    tentativa = 0
-    print("\nPalpite gerado!")
+print(numero)
 
-    chute=0
-    while chute is not resposta:
-        tentativa +=1
-        chute = int (input ("qual seu chute: "))
-        if chute > resposta: 
-            print("Errou!! É um valor menor que ", chute)
-        elif chute < resposta:
-            print("Errou! É um valor maio que ", chute)
-        else:
-            print("parabéns! O número gerado foi ",resposta, \
-                  "Acertou em ",tentativa"tentativas!")
-            
-    while True:
-        game()
+while True:
+    palpite = int(input("Insira seu palpite do número: "))
+    if palpite == numero:
+        print("Parabéns,você acertou!")
+        break
+    if palpite > numero:
+        print("Tente novamente, o seu palpite está muito alto!")
+    else:
+        print("Tente novamente, o seu palpite esta muito baixo!")
+
